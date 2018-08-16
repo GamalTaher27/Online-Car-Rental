@@ -1,0 +1,187 @@
+﻿@using Microsoft.AspNet.Identity;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/content/homee.css" rel="stylesheet" />
+    <link href="~/content/CarDetails.css" rel="stylesheet" />
+    <link href="~/content/sweetalert.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ***********start navbar ***********-->
+    <nav class="navbar  navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="logo" src="../../images/wa4.png">
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="~/Home/Index" class="nav-font">  <span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    <li><a href="#" class="nav-font">  <span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
+                    <li><a href="#" class="nav-font">  <span class="glyphicon glyphicon-exclamation-sign"></span> About</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            <a href="javascript:document.getElementById('logoutForm').submit()">
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                }
+                                <span class="glyphicon glyphicon-off"></span>
+                                Logout
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Account/Login" class="nav-font"> <span class="glyphicon glyphicon-lock"></span> Login</a></li>
+                    }
+                     
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+    <!-- ***********end navbar ***********-->
+   
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <!-- Start section footer -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <ul class="list-unstyled three-columns social">
+                    <div class="col-md-6 ">
+                        <li><img src="../../images/facebook.png"></li>
+                        <li><img src="../../images/twitter.png"></li>
+                        <li><img src="../../images/gplus.png"></li>
+                        <li><img src="../../images/youtube.png"></li>
+                    </div>
+                </ul>
+            </div>
+            <p class="text-center"> copyright 	&#169 2018-Dawwar website . all rights reserved.</p>
+        </div>
+    </section>
+
+    <div class="modal fade" id="rentModal" role="dialog">
+        <div class="modal-dialog"  role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Rent Details</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="email">From: </label>
+                            <input type="date" class="form-control" id="txtFrom">
+                        </div>
+                        <div class="form-group" style="margin-left:50px;">
+                            <label for="pwd">To: </label>
+                            <input type="date" class="form-control" id="txtTo">
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnCash">Rent by Cash</button>
+                    <button type="button" class="btn btn-success" id="btnPP"><i class="fa fa-ban"></i> Rent by PayPal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End section footer -->
+
+    <script src="~/scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/delUser.js"></script>
+    <script src="~/scripts/sweetalert.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        });
+
+        $("#btnCash").click(function () {
+
+            txtFrom = document.getElementById('txtFrom').value;
+            txtTo = document.getElementById('txtTo').value;
+            
+            carId = document.getElementById('CarId').value;
+            console.log(txtFrom);
+            console.log(txtTo);
+            console.log(carId);
+            serviceURL = "/Cars/RentCash";
+            $.ajax({
+                type: "POST",
+                url: serviceURL,
+                data: "{'from': '" + txtFrom + "','to': '" + txtTo + "','carId': '" + carId + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    if (data == "Added")
+                    {
+                        swal({
+                            title: "",
+                            text: 'Rent Successfully',
+                            type: 'success',
+                            showCancelButton: false,
+                            showConfirmButton: false
+                        });
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 3000);
+                    }
+                    else {
+                        swal({
+                            title: 'Error',
+                            text: data,
+                            type: 'error',
+                            showCancelButton: false,
+                            showConfirmButton: false
+                        });
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 3000);
+                    }
+                   
+                },
+                error: function (errormessage) {
+                    swal({
+                        title: 'Error',
+                        text: 'Some thing went wrong',
+                        type: 'error',
+                        showCancelButton: false,
+                        showConfirmButton: false
+                    });
+                    setTimeout(function () {
+                        window.location.reload()
+                    }, 3000);
+                }
+            });
+        });
+        $("#btnPP").click(function () {
+
+        });
+    </script>
+</body>
+</html>

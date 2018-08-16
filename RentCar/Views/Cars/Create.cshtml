@@ -1,0 +1,100 @@
+﻿@model RentCar.Models.Cars
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h1 class="text-center add_car_heading">ADD CAR</h1>
+
+    @using (Html.BeginForm("Create", "Cars", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="alert alert-danger" id="error-div" style="display:none">
+                <h4>Create</h4>
+            </div>
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.DropDownList("category", null, new { @class = "form-control sel1" })
+                        @Html.ValidationMessageFor(model => model.category, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(model => model.Model, new { placeholder = "Model", @class = "form-control sel1" })
+                        @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.DropDownList("Color", null, new { @class = "form-control sel1" })
+                        @Html.ValidationMessageFor(model => model.Color, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="file" name="upload" required />
+                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(model => model.NumberOfChairs, new { placeholder = "Number Of Chairs", @class = "form-control sel1" })
+                        @Html.ValidationMessageFor(model => model.NumberOfChairs, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.DropDownList("State", null, new { @class = "form-control sel1" })
+                        @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(model => model.Amount, new { placeholder = "Amount", @class = "form-control money" })
+                        @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" value="Add Car" class="btn btn-primary btn-lg covbtn" />
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center" style="color:#2E86C1; font-size:28px;">
+            @Html.ActionLink("Back to cars List", "Index")
+        </div>
+
+    }
+
+</div>
+

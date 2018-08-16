@@ -1,0 +1,40 @@
+﻿body{
+    
+    background-image: url("../../images/ag.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover; 
+    
+  
+}
+
+.CarDetails
+{
+
+   font-family: Georgia, serif;
+   text-shadow: 1px 1px 1px #000000;
+    background: rgba(3,3,3,.6);
+    color: #2E86C1;
+    padding: 60px;
+    margin: 80px;
+    font-size: large;
+    border-radius: 30px;
+ }
+
+.CarD_h
+{
+     font-family: Georgia, serif;
+     color: #2E86C1;
+     padding: 10px;
+     text-shadow: 2px 2px 3px #ffffff;
+
+}
+
+ .car_detail{
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 3px 3px 3px #000000;
+ }

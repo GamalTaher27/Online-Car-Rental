@@ -1,0 +1,63 @@
+﻿@model IEnumerable<RentCar.Models.Cars>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/shared/_AdminLayout.cshtml";
+}
+
+<h1 class="text-center add_car_heading">CARS</h1>
+
+
+<div class="text-center" style="font-size:28px; text-decoration:none; font-weight:bold">
+    @Html.ActionLink("Add New Car", "Create")
+</div>
+<br />
+
+@using (Html.BeginForm("Search", "Cars", FormMethod.Post))
+    {
+<input type="text" name="SearchId"
+       id="SearchId"
+       class="form-control"
+       placeholder="Search Car ID"
+       style="width:300px; margin:auto;" />
+    }
+
+    @foreach (var item in Model)
+    {
+
+        <div class="container">
+
+            <div class="car_box">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <img src="~/uploads/@Html.DisplayFor(model => item.Image)"
+                             class="thumbnail"
+                             style="width:250px; height:220px;" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <ul>
+                            <li><p class="cdetails">Car ID:<span class="car_details"> @Html.DisplayFor(modelItem => item.id)</span></p></li>
+
+                            <li><p class="cdetails">Car Category:<span class="car_details"> @Html.DisplayFor(modelItem => item.category)</span></p></li>
+                            <li><p class="cdetails">Color:<span class="car_details">@Html.DisplayFor(modelItem => item.Color)</span></p></li>
+                            <li><p class="cdetails">Price:<span class="car_details">@Html.DisplayFor(modelItem => item.Amount)</span></p></li>
+                            <li><p class="cdetails">Number of chairs:<span class="car_details">@Html.DisplayFor(modelItem => item.NumberOfChairs)</span></p></li>
+                            <li><p class="cdetails">State:<span class="car_details"> @Html.DisplayFor(modelItem => item.State)</span></p></li>
+                            <li><p class="cdetails">Model:<span class="car_details"> @Html.DisplayFor(modelItem => item.Model)</span></p></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2">
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger delete_btn btn-lg" })
+                        <br />
+                        @Html.ActionLink("Update", "Edit", new { id = item.id }, new { @class = "btn btn-primary update_btn btn-lg" })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+

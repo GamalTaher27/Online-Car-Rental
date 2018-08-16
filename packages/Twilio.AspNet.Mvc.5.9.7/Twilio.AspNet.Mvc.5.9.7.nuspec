@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Twilio.AspNet.Mvc</id>
+    <version>5.9.7</version>
+    <title>Twilio.AspNet.Mvc</title>
+    <authors>Twilio</authors>
+    <owners>Twilio</owners>
+    <licenseUrl>https://github.com/twilio/twilio-aspnet/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://github.com/twilio/twilio-aspnet</projectUrl>
+    <iconUrl>https://s3.amazonaws.com/com.twilio.prod.twilio-docs/images/twilio-icon-64x64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Twilio helpers for ASP.NET MVC versions 3 through 5.</description>
+    <summary />
+    <releaseNotes>Broke out Twilio.AspNet.Common into separate package.</releaseNotes>
+    <copyright>Copyright © 2017</copyright>
+    <tags>REST SMS voice telephony phone twilio twiml</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Mvc" version="3.0.20105.1" />
+      <dependency id="Twilio" version="5.9.7" />
+      <dependency id="Twilio.AspNet.Common" version="5.8.3" />
+    </dependencies>
+  </metadata>
+</package>

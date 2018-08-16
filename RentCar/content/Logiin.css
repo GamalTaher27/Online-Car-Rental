@@ -1,0 +1,128 @@
+﻿/*Main Navbar*/
+.navbar
+{
+    min-height: 50px;
+} 
+
+/*Navbar links */
+
+ .navbar-nav > li > a 
+{
+ 
+   padding-top: 40px;
+   padding-bottom: 20px;
+   font-size: 16px;
+    color: #ffffff  ;
+   text-shadow: 2px 2px 3px #000000;
+   
+   
+}
+.signup
+{
+    color: #000000  ;
+   text-shadow: 2px 2px 3px #ffffff; 
+}
+.navbar-toggle  /*l 3 lines lma b3ml l screen sm */
+{
+    
+    color: #000;
+    background-color: #888;
+    border-color: #000;
+}
+
+/*Start Background */
+body{
+    
+    background-image: url("../images/log.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover; 
+    
+  
+}
+
+
+form
+{
+   
+   padding-top: 12%;
+   margin: 10px;
+   margin-left: 66%;
+   max-width:400px;
+    
+}
+.heading
+{
+    font-family: Georgia, serif;
+   font-size: 40px;
+   padding-bottom: 10px;
+   color: #000000  ;
+   text-shadow: 2px 2px 3px #ffffff;
+}
+
+ 
+/* section main */
+
+.Email
+{
+
+  /* background: rgba(3,3,3,.7);*/
+   border: #333 ;
+   border-radius: 3px;
+   color: #000000  ;
+   
+}
+.Email:hover
+{
+  
+    margin-left: 5px;
+   /*background: rgba(3,3,3,.7);*/
+   border: #333 ;
+   border-radius: 3px;
+   
+   color: #000;
+   -webkit-transition: all 0.9s ease-in-out;
+   -moz-transition: all 0.9s ease-in-out;
+   -o-transition: all 0.9s ease-in-out;
+   transition: all 0.9s ease-in-out;
+}
+.Password
+{
+    
+   /*background: rgba(3,3,3,.7);*/
+   border: #333 ;
+   border-radius: 3px;
+  
+   
+}
+.Password:hover
+{
+   margin-left: 3px;
+   /*background: rgba(3,3,3,.7);*/
+   border: #333 ;
+   border-radius: 3px;
+   color: #FFF;
+   -webkit-transition: all 0.9s ease-in-out;
+   -moz-transition: all 0.9s ease-in-out;
+   -o-transition: all 0.9s ease-in-out;
+   transition: all 0.9s ease-in-out;
+}
+
+.Signup
+ {
+   font-family: Georgia, serif;
+   font-size: 15px;
+    color: #ffffff  ;
+   text-shadow: 2px 2px 3px #000000;
+ }
+ 
+
+.Chekbox
+ {
+   font-family: Georgia, serif;
+   font-size: 15px;
+   margin-left:10px;
+   color: #000000  ;
+   text-shadow: 2px 2px 3px #ffffff;
+ }

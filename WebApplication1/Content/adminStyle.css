@@ -1,0 +1,70 @@
+body{
+  padding-top: 70px;
+  height: 1000px;
+}
+
+ /*active link(home)*/
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus
+{
+  color : white;
+  background: #2E86C1;
+ }
+ 
+.nav-font{
+  font-family: -apple-system,
+              BlinkMacSystemFont,
+              "Segoe UI","Roboto",
+              "Oxygen","Cantarell",
+              "Open Sans","Helvetica Neue",
+              "Ubuntu",sans-serif; 
+}
+ 
+ .navbar-nav > li > a{
+  line-height: 1.5;
+ }
+
+ .desc{
+  height: 100px;
+  width: 300px;
+ }
+ .money{
+  width: 200px;
+ }
+ .upload_image{
+  color: #FFF;
+ }
+ .add_car_heading{
+  color: #2E86C1;
+  font-weight: bold;
+ }
+ .car_box{
+  background: #D3E5B3;
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 30px;
+  padding: 15px;
+ }
+ .update_btn{
+  margin-top: 15px;
+ }
+ .car_details{
+  font-size: 16px;
+  font-weight: bold;
+  color: #2E86C1;
+ }
+ .cdetails{
+  font-size: 18px;
+  font-weight: bold;
+ }
+  .update_box{
+    background: rgba(3,3,3,.5);
+    display: none;
+    padding: 15px;
+    border-radius: 20px;
+ }
+  .update_car_heading{
+  color: #FFF;
+  font-weight: bold;
+ }

@@ -1,0 +1,285 @@
+body{
+    padding-top: 50px; 
+}
+
+/***************start overriding bootstrap*******************/
+ /*active link(home)*/
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus
+{
+  color : white;
+  background: #2E86C1;
+ }
+ 
+.logo{
+ max-height: 50px;
+ width: 180px;
+ padding-top: 0;
+ margin-top: 0;
+ margin-left: -110px;
+ }
+
+.nav-font{
+  font-family: -apple-system,
+              BlinkMacSystemFont,
+              "Segoe UI","Roboto",
+              "Oxygen","Cantarell",
+              "Open Sans","Helvetica Neue",
+              "Ubuntu",sans-serif; 
+}
+ 
+ .navbar-nav > li > a{
+  line-height: 1.5;
+ }
+ 
+ .dropdown-menu > li > a{
+ background: Black;
+ color:white;
+ 
+}
+
+.dropdown-item > li > a
+ {
+  color: white;
+ }
+ .dropdown-item:focus, .dropdown-item:hover
+ {
+  background-color: #2E86C1;
+  color: white;
+ }
+ /*********end overriding bootstrap**********/
+ 
+ .coverpic{
+ padding-bottom:50px;
+ height: 550px;
+ width:100%;
+ background: url("../images/car.jpg") no-repeat center center;
+ background-size: cover;
+ }
+
+ .covercontent{
+    background: rgba(3,3,3,.6);
+    color: #2E86C1;
+    padding: 80px;
+    margin: 80px;
+    font-size: large;
+    border-radius: 30px;
+ }
+ .covertext{
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px;
+ }
+ 
+ .cover-btn{
+    color: #FFF;
+    background-color: #2E86C1;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: -apple-system,
+              BlinkMacSystemFont,
+              "Segoe UI","Roboto",
+              "Oxygen","Cantarell",
+              "Open Sans","Helvetica Neue",
+              "Ubuntu",sans-serif;
+    opacity: .8;
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
+ }
+ 
+ .cover-btn:hover{
+    color: #FFF;
+    background-color: #2E86C1;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: -apple-system,
+              BlinkMacSystemFont,
+              "Segoe UI","Roboto",
+              "Oxygen","Cantarell",
+              "Open Sans","Helvetica Neue",
+              "Ubuntu",sans-serif;
+        opacity: 1;
+    
+ }
+ 
+ /*start reg benifits section*/
+  .reg{
+ padding-bottom:50px;
+ height: 623px;
+ background: url("../images/registration.jpeg") no-repeat center center fixed;
+ background-size: cover;
+ }
+ 
+  .reg .regdiv{
+ background: rgba(252,252,252,0.8);
+ height:623px;;
+ color: #B6B5B5;
+ }
+ 
+ .bor{
+    color: #21618C;
+    font-family: -apple-system,
+              BlinkMacSystemFont,
+              "Segoe UI","Roboto",
+              "Oxygen","Cantarell",
+              "Open Sans","Helvetica Neue",
+              "Ubuntu",sans-serif;
+              padding: 20px;
+ }
+ 
+.reg .regdiv ul li{
+ color: #000;
+ font-family: -apple-system,
+              BlinkMacSystemFont,
+              "Segoe UI","Roboto",
+              "Oxygen","Cantarell",
+              "Open Sans","Helvetica Neue",
+              "Ubuntu",sans-serif;
+              padding: 15px;
+              font-size: 18px;
+
+ }
+ .reg-img{
+    padding-top: 60px;
+ }
+ 
+ .liststyle{
+    list-style: inherit;
+ }
+  /*End reg benifits section*/
+  
+/*start success stories section*/
+.success{
+    background: url("../images/success.jpeg") no-repeat center center fixed;
+    height: 400px;
+    background-size: cover;
+}
+
+.success .succ{
+    background: rgba(6,29,50,.9);
+    height: 400px;
+}
+
+/*start testimonial section*/
+
+.testimonial
+{
+ padding:70px;
+ padding:70px;
+}
+.testimonial h1
+{
+ font-weight:bold;
+ color: #FFF;
+}
+.testimonial .lead
+{
+ margin-bottom: 10px;
+ color: #FFF;
+}
+.testimonial span
+{
+ font-size: 18px;
+ color: #2E86C1;
+ font-weight: bold;
+}
+.testimonial .carousel-inner
+{
+ min-height: 160px;
+}
+.testimonial .carousel-indicators
+{
+ position: static;
+ width: 100%;
+ margin-left: auto;
+}
+.testimonial .carousel-indicators li
+{
+ text-indent: 0;
+ width: 50px;
+ height: 50px;
+ opacity: .4; /*shfafia*/
+ border: 2px solid #FFF;
+ border-radius: 50%; /*3shan el sora tb2a mdawara*/
+ overflow: hidden; /*3shan y5fi ba2i el sora el mawgod wra el dayra */
+ margin: 5px;
+ -webkit-transition:all .7s ease;
+  -moz-transition:all .7s ease;
+  -o-transition:all .7s ease;
+ transition: all .7s ease;
+}
+.testimonial .carousel-indicators li.active
+{
+ opacity: 1;
+ background: none;
+ border: 2px solid red;
+
+}
+.testimonial .carousel-indicators li img
+{
+ max-width: 100%;
+}
+/*end testimonial section */
+
+/* Start section footer */
+.footer{
+    background: #222;
+    color: #AAA;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+}
+
+.footer h2{
+    color: #0895D1;
+    margin: 30px 0 20px;
+    letter-spacing: 1px;
+}
+
+.footer .three-columns{
+    overflow: hidden;    
+}
+
+.footer .three-columns li{
+    width: 15%;
+    float: left;
+    padding: 5px 0
+}
+
+.footer .social{
+    overflow: hidden;
+    
+}
+
+.footer .social li{
+    float: left;
+    margin-top: 1px;
+    padding-top: 1px;
+    margin-right: 5px;
+    opacity: 0.7;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.footer .social li:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.footer_links{
+ text-decoration: none;
+ color: #FFF;
+}
+
+.footer_links:hover{
+ text-decoration: none;
+ color: #FFF;
+}
+/* End section footer */
+
+

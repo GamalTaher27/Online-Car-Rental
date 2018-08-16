@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.IdentityModel.Logging</id>
+    <version>1.1.5</version>
+    <authors>Microsoft.IdentityModel.Logging</authors>
+    <owners>Microsoft.IdentityModel.Logging</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Includes Event Source based logging support.</description>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.5.1" />
+      <group targetFramework="Unsupported0.0">
+        <dependency id="System.Diagnostics.Tracing" version="4.3.0" />
+        <dependency id="System.Globalization" version="4.3.0" />
+        <dependency id="System.IO" version="4.3.0" />
+        <dependency id="System.IO.FileSystem" version="4.3.0" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

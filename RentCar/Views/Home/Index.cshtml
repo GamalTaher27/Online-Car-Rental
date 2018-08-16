@@ -1,0 +1,71 @@
+﻿@model IEnumerable<RentCar.Models.Cars>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+}
+       
+
+<!-- start cover section -->
+<section class="cov">
+    <div class="container">
+        <section class="covercontent text-center">
+            <h1 class="covertext text-center">CAR RENT</h1>
+            <h2 class="covcont">Hello, You wolud like to rent a car .. it's here</h2><br>
+        </section>
+    </div>
+</section>
+<!-- end cover srction-->
+
+<section class="item_posts">
+    <div class="container ">
+        <div class="text-center">
+
+
+            <button class="btn btn-primary covbtn" id="covbtn">FILTER</button>
+            <div class="box" id="box">
+                          
+                @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+                {
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Car Category</label>                       
+                        @Html.DropDownList("category", null, new { @class = "form-control sel1" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Color</label>
+                        @Html.DropDownList("Color", null, new { @class = "form-control sel1"})
+                    </div>
+                    <input type="submit" class="btn btn-primary covbtn" value="Submit"/>
+                }
+            </div>
+
+
+            @foreach (var item in Model)
+            {
+                
+                    <div class="posts">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12  its">
+                            <div class="item_link">
+                                <section class="items text-center">
+                                    <img class="post_img" src="~/uploads/@Html.DisplayFor(model=>item.Image)" />
+                                    <hr>
+                                    <h2>@Html.DisplayFor(modelItem => item.category)</h2>
+                                    <h3>@Html.DisplayFor(modelItem => item.State)</h3>
+
+                                    
+                                    @Html.ActionLink("Show Details", "../Cars/Details", new { id = item.id },
+                                    new { @class = "btn btn-contact btn-lg" })
+                                    
+                                   
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+            }
+           </div>
+        </div>
+</section>
+
+
+            <!--End Posts-->

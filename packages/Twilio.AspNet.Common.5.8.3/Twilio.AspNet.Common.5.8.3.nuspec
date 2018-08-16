@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Twilio.AspNet.Common</id>
+    <version>5.8.3</version>
+    <title>Twilio.AspNet.Common</title>
+    <authors>Twilio</authors>
+    <owners>Twilio</owners>
+    <licenseUrl>https://github.com/twilio/twilio-aspnet/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://github.com/twilio/twilio-aspnet</projectUrl>
+    <iconUrl>https://s3.amazonaws.com/com.twilio.prod.twilio-docs/images/twilio-icon-64x64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Twilio request classes for handling Twilio webhooks.</description>
+    <summary>Common classes for other Twilio.AspNet.* packages.</summary>
+    <releaseNotes>First release. This library used to be embedded in the Twilio.AspNet.Mvc package.</releaseNotes>
+    <copyright>Copyright 2017 (c) Twilio, Inc. All rights reserved.</copyright>
+    <tags>twilio</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework="Unsupported0.0">
+        <dependency id="NETStandard.Library" version="1.6.1" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

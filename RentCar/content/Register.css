@@ -1,0 +1,89 @@
+/*Main Navbar*/
+.navbar
+{
+    min-height: 50px;
+} 
+
+/*Navbar links */
+
+ .navbar-nav > li > a 
+{
+ 
+   padding-top: 40px;
+   padding-bottom: 20px;
+   font-size: 16px;
+    color: #ffffff  ;
+   text-shadow: 2px 2px 3px #000000;
+   
+   
+}
+
+.navbar-toggle  /*l 3 lines lma b3ml l screen sm */
+{
+    
+    color: #000;
+    background-color: #888;
+    border-color: #000;
+}
+
+/*Start Background */
+body{
+    
+    background-image: url("../images/r.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top:60px;
+  
+}
+form
+{
+   padding: 9%;
+   padding-top: 4%;
+   padding-bottom: 0%;
+   
+   
+}
+
+.form-group{
+    padding:15px;
+}
+
+label
+{
+    
+   font-family: Georgia, serif;
+   font-size: 13px;
+   padding-bottom: 10px;
+   color: #000000  ;
+   text-shadow: 2px 2px 3px #ffffff;
+}
+
+h1
+{
+   font-family: Georgia, serif;
+   font-size: 30px;
+   padding-bottom: 10px;
+   color: #000000  ;
+   text-shadow: 2px 2px 3px #ffffff;
+   text-align: center;
+}
+.klam
+{
+   
+   padding-top: 10%;
+   margin-left: 55%;
+
+   font-family: Georgia, serif;
+   font-size: 25px;
+   color: #000000  ;
+   text-shadow: 2px 2px 3px #f0f0f0;
+   text-align: left;
+   
+}
+h2
+{
+     font-size: 30px;
+     font-weight: bold; 
+}

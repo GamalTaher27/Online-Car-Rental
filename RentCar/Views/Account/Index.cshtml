@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WebApplication1.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/_AdminLayout.cshtml";
+}
+
+<h1 class="text-center" style="color:#2E86C1; font-weight:bold;">System Users</h1>
+    <table class="table" id="myTable">
+        <thead>
+            <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            @foreach (var item in Model)
+            {
+                if (item.Email != "admin@admin.web")
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Lname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Usname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+
+                        <td>
+                           
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger usrbtn", onclick = "return confirm('Are you sure you want to delete this user ?')" })
+                            
+                            
+                                @if (item.State == 0)
+                                {
+                                    
+                                        @Html.ActionLink("Block", "Block", new { id = item.Id }, new { @class = "btn btn-warning usrbtn" })
+                                    
+                                }
+                                    
+                            
+
+                                @if (item.State == 1)
+                                {
+                                   
+                                        @Html.ActionLink("Unblock", "Block", new { id = item.Id }, new { @class = "btn btn-warning usrbtn" })
+                                   
+                                }
+                                    
+                            
+                                @Html.ActionLink("Update Balance", "EditBalance", new { id = item.Id }, new { @class = "btn btn-success usrbtn" })
+                    
+
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>

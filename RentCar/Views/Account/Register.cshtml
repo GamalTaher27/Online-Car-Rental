@@ -1,0 +1,60 @@
+﻿@model WebApplication1.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_RegisterLayout.cshtml";
+}
+
+<div class="fooofooof col-md-6">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+
+
+        @Html.AntiForgeryToken()      
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <h1>Register</h1>
+
+        <div class="form-group ">   
+            @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @class = "form-control" })
+        </div>
+        <div class="form-group ">           
+            @Html.TextBoxFor(m => m.Usname, new { placeholder = "Username", @class = "form-control" })
+        </div>    
+            <div class="form-group">
+                <div class="col-md-6">             
+                    @Html.TextBoxFor(m => m.Fname, new { placeholder = "First Name", @class = "form-control" })
+                </div>
+                    <div class="col-md-6">                      
+                        @Html.TextBoxFor(m => m.Lname, new { placeholder = "Last Name", @class = "form-control" })
+                    </div>
+        </div>
+
+        <div class="form-group">   
+            @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "form-control" })
+        </div>
+
+        <div class="form-group">       
+            @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = "Confirm Password", @class = "form-control" })
+        </div>
+
+        <div class="form-group ">         
+            @Html.DropDownList("CarType", null, new { placeholder = "Favourit Car Type", @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" required />
+                <label class="form-check-label" for="gridCheck">
+                    Agree to
+                    <a class="signup" href="url"> terms and conditions</a>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" class="btn btn-primary" value="Register" />
+            </div>
+        </div>
+    }
+</div>
+

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<RentCar.Models.Cars>
+
+@{
+
+    ViewBag.Title = "Report";
+    Layout = "~/Views/shared/_AdminLayout.cshtml";
+    float ava = 0;
+    float unava = 0;
+    float count = 0;
+    float ava_perc, unava_perc;
+    foreach (var item1 in Model)
+    {
+        if (item1.State.Equals("Available"))
+        {
+            ava++;
+        }
+        else
+        {
+            unava++;
+        }
+        count++;
+    }
+    ava_perc = (ava * 100) / count;
+    unava_perc = (unava * 100) / count;
+}
+
+<h1 class="report_heading">Cars Report</h1>
+
+<div class="container">
+
+<div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="@ava_perc" aria-valuemin="0" aria-valuemax="100" style="width: @ava_perc%; font-size:18px;">
+        @ava_perc % Available
+    </div>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="@unava_perc" aria-valuemin="0" aria-valuemax="100" style="width: @unava_perc%; font-size:18px;">
+        @unava_perc % Unavailable
+    </div>
+</div>
+
+    <div class="row">
+        
+        <div class="col-md-5 col-xs-12 avadiv">
+            
+                    <h1 class="available_heading">Available</h1>
+                
+            @foreach (var item in Model)
+            {
+                if (item.State.Equals("Available"))
+                {
+                    <h2 style="text-align:center">Car @item.id</h2>
+                    <ul style="font-size:16px;">
+                        <li>
+                            Category: @item.category
+                        </li>
+                        <li>
+                            Model: @item.Model
+                        </li>
+                        <li>
+                            Color: @item.Color
+                        </li>
+                        <li>
+                            Number of seats: @item.NumberOfChairs
+                        </li>
+                        <li>
+                            Price: @item.Amount $/Day
+                        </li>
+                    </ul>
+                    <hr />
+                }
+            }
+        </div>
+        <div class="col-md-2 col-xs-12">
+
+        </div>
+            
+            <div class="col-md-5 col-xs-12 unavadiv">
+                <h1 class="unavailable_heading">Unavailable</h1>
+
+                @foreach (var item2 in Model)
+                {
+                    if (item2.State.Equals("UnAvailable"))
+                    {
+                        <h2 style="text-align:center">Car @item2.id</h2>
+                        <ul style="font-size:16px;">
+                            <li>
+                                Category: @item2.category
+                            </li>
+                            <li>
+                                Model: @item2.Model
+                            </li>
+                            <li>
+                                Color: @item2.Color
+                            </li>
+                            <li>
+                                Number of seats: @item2.NumberOfChairs
+                            </li>
+                            <li>
+                                Price: @item2.Amount $/Day
+                            </li>
+                        </ul>
+                        <hr />
+                    }
+                }
+            </div>
+        </div>
+</div>
